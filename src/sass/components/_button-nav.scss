@@ -1,0 +1,22 @@
+.home-page-nav__btn {
+  width: 138px;
+  height: 36px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #ff868e;
+  box-shadow: rgb(60 64 67 / 30%) 0px 1px 3px 0px, rgb(60 64 67 / 15%) 0px 4px 8px 3px;
+  &:hover {
+    background-color: #fbe0dc;
+  }
+}
+.active {
+  background: #ff868e;
+  color: #fff;
+}

@@ -1,3 +1,4 @@
 import './sass/main.scss';
-
-console.log('Hello World');
+import './js/togle-page';
+import './js/render-page-breed';
+import { getData } from './js/api';

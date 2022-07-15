@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&family=The+Nautigal:wght@700&display=swap');
+body {
+  background-color: #f8f8f7;
+  width: 100vw;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Визуально скрытый для пользователя
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.visually-none {
+  display: none;
+}

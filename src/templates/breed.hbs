@@ -1,0 +1,87 @@
+{{!-- {{#with this}} --}}
+
+  <!-- container-search -->
+  <section class='navigation'>
+    <h2 class='visually-hidden'>section with search navigation</h2>
+    <form class='navigation__form'>
+      <input class='input-search' type='text' placeholder='Search for breeds by name' />
+      <button class='button-search' type='button'>
+        <svg width='20' height='20'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-search-white-20'></use>
+          <use href='./pictures/svg/symbol-defs.svg#icon-search-white-20'></use>
+        </svg>
+
+      </button>
+    </form>
+    <ul class='list-likes'>
+      <li class='navigation__button-voting'>
+        <svg width='30' height='30'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-Vector-Stroke'></use>
+        </svg>
+      </li>
+      <li class='navigation__button-voting'>
+        <svg width='30' height='30'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-Vector-348-Har'></use>
+        </svg>
+      </li>
+      <li class='navigation__button-voting'>
+        <svg width='30' height='30'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-Vector-Strokedis'></use>
+        </svg>
+      </li>
+    </ul>
+  </section>
+
+  <section class='container-breeds'>
+    <h2 class='visually-hidden'>section with breeds selected</h2>
+    <div class='container-voting__wrap-head'>
+      <button class='button-back'>
+        <svg width='20' height='20'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-arrow-left-1'></use>
+        </svg>
+      </button>
+      <div class='container-voting__current'>BREEDS</div>
+      <select class='select-breeds' id='size' name='size'>
+        {{#each this}} 
+        <option value='{{name}}'>{{name}}</option>
+        {{/each}}
+      </select>
+      <select class='select-limit-items' id='limit' name='size'>
+        <option value='5'>Limit: 5</option>
+        <option value='10'>Limit: 10</option>
+        <option value='15' >Limit: 15</option>
+        <option value='20'>Limit: 20</option>
+      </select>
+      <button class='button-sorting'>
+        <svg width='20' height='20'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-up'></use>
+        </svg>
+      </button>
+      <button class='button-sorting'>
+        <svg width='20' height='20'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-down'></use>
+        </svg>
+      </button>
+    </div>
+    {{! gallery }}
+     
+    <div class='gallery' id='gallery'>
+      {{#each this}} 
+      {{#if this.image.url}}
+      <div class='gallery-item'>
+        <div class='content'><img
+            src="{{image.url}}"
+            alt="{{name}}"
+          /></div>
+      </div>
+      {{/if}}
+       {{/each}}
+      </div>
+    </div>
+    <div class='container-breeds__buttons'>
+      <button class='container-breeds__paginator-prev' data-action="prev">PREV</button>
+      <button class='container-breeds__paginator-next' data-action="next">NEXT</button>
+    </div>
+  </section>
+
+{{!-- {{/with}} --}}

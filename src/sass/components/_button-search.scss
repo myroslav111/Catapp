@@ -1,0 +1,121 @@
+.button-search {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fbe0dc;
+  fill: #ff868e;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  &:hover {
+    background-color: #ff868e;
+  }
+}
+
+.button-back {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  font-family: 'Jost';
+  font-size: 20px;
+  line-height: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fbe0dc;
+  fill: #ff868e;
+  margin-right: 10px;
+  &:hover {
+    background-color: #ff868e;
+    fill: #fff;
+  }
+}
+
+.button-sorting {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  font-family: 'Jost';
+  font-size: 20px;
+  line-height: 30px;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 8px;
+  background-color: #f8f8f7;
+  fill: #8c8c8c;
+  &:hover {
+    fill: #ff868e;
+    background: #f8f8f7;
+    border: 2px solid #fbe0dc;
+  }
+}
+
+.btn-add {
+  width: 80px;
+  height: 80px;
+  //   background-color: aqua;
+}
+.likes {
+  background-color: #97eab9;
+  fill: #fff;
+  &:hover {
+    background: rgba(151, 234, 185, 0.3);
+    fill: #97eab9;
+  }
+}
+.favourites {
+  background-color: #ff868e;
+  fill: #fff;
+  &:hover {
+    background: rgba(255, 134, 142, 0.3);
+    fill: #ff868e;
+  }
+}
+.dislikes {
+  background-color: #ffd280;
+  fill: #fff;
+  &:hover {
+    background: rgba(255, 210, 128, 0.3);
+    fill: #ffd280;
+  }
+}
+
+.btn-upload {
+  width: 143px;
+  height: 40px;
+  margin-left: auto;
+  background: #fbe0dc;
+  border-radius: 10px;
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  color: #ff868e;
+  fill: #ff868e;
+  & svg {
+    margin-right: 10px;
+  }
+  &:hover {
+    fill: #ffffff;
+    color: #fff;
+    background-color: #ff868e;
+  }
+}
+
+.button-refresh {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 10px;
+  background: #ffffff;
+  fill: #ff868e;
+  &:hover {
+    fill: #fff;
+    background-color: #ff868e;
+  }
+}

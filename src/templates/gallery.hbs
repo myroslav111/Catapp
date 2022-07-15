@@ -1,0 +1,158 @@
+{{#with this}}
+
+  <!-- container-search -->
+  <section class='navigation'>
+    <h2 class='visually-hidden'>section with search navigation</h2>
+    <form class='navigation__form'>
+      <input class='input-search' type='text' placeholder='Search for breeds by name' />
+      <button class='button-search' type='button'>
+        <svg width='20' height='20'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-search-white-20'></use>
+        </svg>
+
+      </button>
+    </form>
+    <ul class='list-likes'>
+      <li class='navigation__button-voting'>
+        <svg width='30' height='30'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-Vector-Stroke'></use>
+        </svg>
+      </li>
+      <li class='navigation__button-voting'>
+        <svg width='30' height='30'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-Vector-348-Har'></use>
+        </svg>
+      </li>
+      <li class='navigation__button-voting'>
+        <svg width='30' height='30'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-Vector-Strokedis'></use>
+        </svg>
+      </li>
+    </ul>
+  </section>
+
+  <section class='container-gallery'>
+    <h2 class='visually-hidden'>section with gallery cat</h2>
+    <div class='container-voting__wrap-head'>
+      <button class='button-back'>
+        <svg width='20' height='20'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-arrow-left-1'></use>
+        </svg>
+      </button>
+      <div class='container-voting__current'>GALLERY</div>
+      <button class='btn-upload'>
+        <svg width='16' height='16'>
+          <use href='./pictures/svg/symbol-defs.svg#icon-upload'></use></svg>UPLOAD
+      </button>
+    </div>
+    <form class='selecr-form'>
+      <div class='selecr-form__wrap'>
+        <label for='order'>ORDER</label>
+        <select class='selecr-form__order order-sel' id='size' name='order'>
+          <option value='xs'>Random</option>
+          <option value='s'>Desc</option>
+          <option value='s'>Asc</option>
+        </select>
+        <label for='order'>BREED</label>
+        <select class='selecr-form__order breed-sel' id='size' name='breed'>
+          <option value='xs'>Extra Small</option>
+        </select>
+      </div>
+      <div class='selecr-form__wrap'>
+        <label for='order'>TYPE</label>
+        <select class='selecr-form__order type-sel' id='size' name='type'>
+          <option value='xs'>All</option>
+          <option value='s'>Static</option>
+          <option value='s'>Animated</option>
+        </select>
+        <label for='order'>LIMIT</label>
+        <div class='selecr-form__last-select-wrap'>
+          <select class='selecr-form__order limit-sel' id='size' name='limit'>
+            <option value='xs'>10 items per page</option>
+            <option value='s'>15 items per page</option>
+            <option value='s'>20 items per page</option>
+          </select>
+          <button class='button-refresh'>
+            <svg width='20' height='20'>
+              <use href='./pictures/svg/symbol-defs.svg#icon-refr'></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    {{! gallery }}
+    <div class='gallery' id='gallery'>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,care'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,studied'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,substance'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,choose'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,past'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,lamp'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img src='https://source.unsplash.com/random/?tech,yet' alt='' /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,eight'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,crew'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,event'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,instrument'
+            alt=''
+          /></div>
+      </div>
+      <div class='gallery-item'>
+        <div class='content'><img
+            src='https://source.unsplash.com/random/?tech,practical'
+            alt=''
+          /></div>
+      </div>
+    </div>
+  </section>
+
+{{/with}}

@@ -4,5 +4,27 @@
  */
 
 // Стили для файла с примером HTML-фрагмента
-
-@import './example.scss'
+@import './base';
+@import './var';
+@import './components';
+@import './home-page';
+@import './home-page-left';
+@import './components/logo';
+@import './components/home-page-card';
+@import './components/button-nav';
+@import './components/button-search';
+@import './components/button-voting';
+@import './components/input';
+@import './home-page-container';
+@import './home-page-right.scss';
+@import './container-right';
+@import './navigation';
+@import './bloc-form';
+@import './container-voting';
+@import './container-breeds';
+@import './components/select';
+@import './container-gallery';
+@import './display-non';
+@import './gallery';
+// @import './';
+// @import './';

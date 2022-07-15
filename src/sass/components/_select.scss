@@ -1,0 +1,59 @@
+.select-breeds {
+  border: none;
+  box-shadow: none;
+  padding-left: 14px;
+  //   padding-right: 14px;
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #8c8c8c;
+  width: 226px;
+  height: 40px;
+  margin-right: 10px;
+  background: #f8f8f7;
+  border-radius: 10px;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    border: 2px solid #fbe0dc;
+  }
+}
+
+.select-limit-items {
+  @extend .select-breeds;
+  width: 101px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  &:hover {
+    border: 2px solid #fbe0dc;
+  }
+}
+
+.selecr-form__order {
+  @extend .select-breeds;
+  width: 290px;
+  height: 40px;
+  background: #ffffff;
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1d1d1d;
+}
+
+.order-sel {
+  margin-bottom: 10px;
+}
+
+.type-sel {
+  margin-bottom: 10px;
+}
+
+.limit {
+  width: 240px;
+  margin-right: 10px;
+}

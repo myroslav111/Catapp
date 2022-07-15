@@ -1,0 +1,22 @@
+.input-search {
+  width: 100%;
+  height: 60px;
+  border: none;
+  box-shadow: none;
+  background: #ffffff;
+  border-radius: 20px;
+  position: relative;
+  padding-left: 15px;
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #8c8c8c;
+  &:focus {
+    outline: none;
+    border: 2px solid #fbe0dc;
+  }
+  &:hover {
+    border: 2px solid #fbe0dc;
+  }
+}

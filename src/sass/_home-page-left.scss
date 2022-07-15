@@ -1,0 +1,48 @@
+.home-page-left-part {
+  padding: 0px 137px 0px 117px;
+  // height: 1500px;
+  padding-top: 30px;
+  position: relative;
+  &__logo {
+    display: flex;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 75px;
+  }
+}
+
+.home-page-nav {
+  position: sticky;
+  top: 0;
+  width: 446px;
+  height: 1px;
+  // height: 450px;
+  & .home-page-nav__title {
+    font-size: getFont('title-home-page');
+    font-family: 'Jost', sans-serif;
+    line-height: 58px;
+    margin-bottom: 10px;
+  }
+  &__greetings {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: 400;
+    color: getColor('text-grey');
+    margin-bottom: 60px;
+  }
+  &__impulse {
+    font-family: 'Jost';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    color: #1d1d1d;
+    margin-bottom: 20px;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item:not(:last-child) {
+    margin-right: 16px;
+  }
+}

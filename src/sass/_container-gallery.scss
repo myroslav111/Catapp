@@ -1,0 +1,28 @@
+.container-gallery {
+  background-color: #fff;
+  width: 680px;
+  height: 100%;
+  border-radius: 8px;
+  padding: 20px;
+}
+.selecr-form {
+  display: flex;
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  &__last-select-wrap {
+    display: flex;
+  }
+
+  & label {
+    font-family: 'Jost';
+    font-size: 10px;
+    line-height: 18px;
+    padding-left: 18px;
+    color: #8c8c8c;
+  }
+}
+
+

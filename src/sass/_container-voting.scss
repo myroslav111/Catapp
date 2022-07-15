@@ -1,0 +1,88 @@
+.container-voting {
+  background-color: #fff;
+  width: 680px;
+  height: 100%;
+  border-radius: 8px;
+  padding: 20px;
+
+  &__current {
+    width: 146px;
+    height: 40px;
+    color: #fff;
+    background: #ff868e;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-family: 'Jost';
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+
+    color: #ffffff;
+  }
+  &__wrap-head {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &__page {
+    position: relative;
+    margin-bottom: 52px;
+  }
+  &__page img {
+    width: 640px;
+    height: 360px;
+    // background-color: #ff868e;
+    border-radius: 8px;
+  }
+  &__wrap-btn-add {
+    width: 257px;
+    height: 88px;
+    display: flex;
+    justify-content: space-around;
+    border: solid 4px #fff;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    bottom: -41px;
+    left: 185px;
+  }
+  &__item {
+    width: 640px;
+    height: 60px;
+    background: #f8f8f7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 18px 20px 18px 15px;
+    margin-bottom: 10px;
+  }
+  &__item-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1d1d1d;
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    width: 61px;
+    height: 30px;
+    background: #ffffff;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  &__item-id {
+    width: 305px;
+    height: 24px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8c8c8c;
+  }
+}
