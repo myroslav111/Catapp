@@ -7,6 +7,7 @@ import { removeActiveStatus } from './remove-active-status';
 function renderVotingPage() {
   removeActiveStatus();
   const markup = voting({});
+  // buttonVoting.classList.add('active');
   return (refs.containerRightPage.innerHTML = markup);
 }
 

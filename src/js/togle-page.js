@@ -18,16 +18,25 @@ function goToPage(e) {
   // условия опредиления пейдж кнопка === нужный пейдж
   switch (btnDataValue) {
     case 'voting':
+      if (buttonVoting.classList.contains('active')) {
+        return;
+      }
       renderVotingPage();
       goBackStartingPage();
       buttonVoting.classList.add('active');
       break;
     case 'breeds':
+      if (buttonBreed.classList.contains('active')) {
+        return;
+      }
       renderBreedPage();
       goBackStartingPage();
 
       break;
     case 'gallery':
+      if (buttonGallery.classList.contains('active')) {
+        return;
+      }
       renderGalleryPage();
       goBackStartingPage();
       buttonGallery.classList.add('active');

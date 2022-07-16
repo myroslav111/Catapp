@@ -7,6 +7,7 @@ import { removeActiveStatus } from './remove-active-status';
 function renderGalleryPage() {
   removeActiveStatus();
   const markup = gallery({});
+  // buttonVoting.classList.add('active');
   return (refs.containerRightPage.innerHTML = markup);
 }
 

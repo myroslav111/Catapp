@@ -1,65 +1,100 @@
 import { refs } from './refs';
-import voting from '../templates/voting.hbs';
 import breed from '../templates/breed.hbs';
-import gallery from '../templates/gallery.hbs';
-import startingPage from '../templates/starting-page.hbs';
-import { getBreeds } from './api';
+import { getBreeds, getDataListBreeds } from './api';
 import { renderStartingPage } from './render-page-starting';
 import { removeActiveStatus } from './remove-active-status';
+import { selectedElement } from './selected-element';
+import Notiflix from 'notiflix';
 
 let page = 1;
+let limit = 5;
+let count = 0;
+let currentElement;
 const buttonBreed = refs.buttonNavigation[1];
+let listBreeds;
+
 async function renderBreedPage(num) {
+  // снимаем активный статус с других кнопок
   removeActiveStatus();
-  // делаем аргумент по дефолту
-  let numLimit = num ? num : 10;
-  let numPage = page ? num : 1;
-  const respons = await getBreeds(numLimit, page);
-  const markup = breed(respons);
-  console.log(respons);
+
+  count += 1;
+  // делаем запрос на породы только раз
+  if (count === 1) {
+    const responsListBreeds = await getDataListBreeds();
+    // listBreeds = responsListBreeds.map(breed => breed.name);
+    listBreeds = responsListBreeds.map(breed => {
+      let obj = {};
+      obj.name = breed.name;
+      obj.id = breed.id;
+      return obj;
+    });
+    console.log(listBreeds);
+  }
+
+  // запрос на для галереи
+  const respons = await getBreeds(limit, page);
+
+  // если прилетел пустой масив значит лист закончился
+  if (respons.length < 1) {
+    Notiflix.Notify.failure('at the end of pictures');
+  }
+  // строка для рендера
+  const markup = breed({ respons, listBreeds });
+
   // рендерим строку пейджа брид в дом
   refs.containerRightPage.innerHTML = markup;
-  // вешаем слушателя на кнопку выйти из бредд
-  document.querySelector('.button-back').addEventListener('click', () => {
+
+  // ссылки на опции селекта лимит и сам селект и кнопки назад
+  const optionArr = document.querySelectorAll('.option');
+  const select = document.querySelector('#limit');
+  const buttonBack = document.querySelector('.button-back');
+
+  // вешаем слушателя на кнопку выйти из breed
+  buttonBack.addEventListener('click', () => {
     renderStartingPage();
     refs.containerRightPage.classList.add('visually-none');
     refs.startingPageRigtPart.classList.remove('visually-none');
   });
+
   // реагируем на изменения в селекте
-  console.dir(document.querySelector('#limit').value);
-  document.querySelector('#limit').addEventListener('change', getLimitPage);
+  select.addEventListener('change', getLimitPage);
+  selectedElement(optionArr, currentElement);
+
+  // делаем активной кнопку навигации
   buttonBreed.classList.add('active');
   paginator();
 }
-// берем значение селекта
-async function getLimitPage() {
-  const limit = document.querySelector('#limit').value;
-  renderBreedPage(Number(limit));
+// берем значение селекта и рисуем новую пейджу
+async function getLimitPage(e) {
+  const currenOption = e.target;
+  limit = Number(currenOption.value);
+  currentElement = currenOption.value;
+  renderBreedPage();
 }
-
+// листаем в перед назад страницы
 function paginator() {
-  // const refBtnNext = document.querySelector('.container-breeds__paginator-next');
   const refBtnNext = document.querySelector('.container-breeds__buttons');
-  console.log(refBtnNext);
   refBtnNext.addEventListener('click', e => {
-    console.dir(e.target.dataset.action);
     const btnName = e.target.dataset.action;
-    if (e.target.nodeName !== 'BUTTON') {
+    const currentBtn = e.target.nodeName;
+
+    if (currentBtn !== 'BUTTON') {
       return;
     }
+    // определяем куда кликнули и применяем кейсы
     switch (btnName) {
       case 'next':
         page += 1;
-        console.log(page);
-        renderBreedPage(Number(limit));
+        renderBreedPage();
+        // console.log(document.querySelector('[data-action="next"]'));
+        // document.querySelector('[data-action="next"]').classList.add('active');
         break;
       case 'prev':
         if (page === 1) {
           return;
         }
         page -= 1;
-        console.log(page);
-        renderBreedPage(Number(limit));
+        renderBreedPage();
         break;
 
       default:
