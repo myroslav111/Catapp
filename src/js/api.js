@@ -2,21 +2,20 @@ import axios from 'axios';
 
 const KEY = 'a2dddf6f-7336-4a31-ba5a-be34ef9f9736';
 
-async function getBreedByName() {
+async function getBreedByName(numLimit, nameBreedId) {
   try {
     axios.defaults.headers.common['x-api-key'] = KEY; // Replace this with your API Key
 
     let response = await axios.get('https://api.thecatapi.com/v1/images/search', {
       // params: { limit: `${numLimit}`, page: `${numPage}`, q: sib },
-      params: { limit: 5, page: 3, breed_ids: 'beng' },
-    }); // Ask for 1 Image, at full resolution
-
-    console.log(response.data);
+      params: { limit: `${numLimit}`, breed_ids: `${nameBreedId}`, size: 'full' },
+    }); // Ask for 1 Image, at full resolution'beng'
+    // console.log(response.data);
+    return response.data;
   } catch (err) {
     console.log(err);
   }
 }
-getBreedByName();
 
 async function getDataListBreeds() {
   try {
@@ -47,4 +46,4 @@ async function getBreeds(numLimit, numPage) {
   }
 }
 // getBreeds(10);
-export { getDataListBreeds, getBreeds };
+export { getDataListBreeds, getBreeds, getBreedByName };

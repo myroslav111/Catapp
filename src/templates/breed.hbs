@@ -41,12 +41,12 @@
         </svg>
       </button>
       <div class='container-voting__current'>BREEDS</div>
-      <select class='select-breeds' id='size' name='size' >
+      <select class='select-breeds' id='breeds' name='breeds-name' >
         {{#each this.listBreeds}} 
-        <option id="{{id}}" value='{{name}}' >{{name}}</option>
+        <option id="{{id}}" value='{{id}}' >{{name}}</option>
         {{/each}}
       </select>
-      <select class='select-limit-items' id='limit' name='size'>
+      <select class='select-limit-items' id='limit' name='breeds-limit'>
         <option class="option" value='5'>Limit: 5</option>
         <option class="option" value='10'>Limit: 10</option>
         <option class="option" value='15' >Limit: 15</option>

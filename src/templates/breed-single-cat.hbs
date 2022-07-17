@@ -1,0 +1,68 @@
+<section class='navigation'>
+  <h2 class='visually-hidden'>section with search navigation</h2>
+  <form class='navigation__form'>
+    <input class='input-search' type='text' placeholder='Search for breeds by name' />
+    <button class='button-search' type='button'>
+      <svg width='20' height='20'>
+        <use href='/symbol-defs.d5da0436.svg#icon-search-white-20'></use>
+      </svg>
+
+    </button>
+  </form>
+  <ul class='list-likes'>
+    <li class='navigation__button-voting'>
+      <svg width='30' height='30'>
+        <use href='/symbol-defs.d5da0436.svg#icon-Vector-Stroke'></use>
+      </svg>
+    </li>
+    <li class='navigation__button-voting'>
+      <svg width='30' height='30'>
+        <use href='/symbol-defs.d5da0436.svg#icon-Vector-348-Har'></use>
+      </svg>
+    </li>
+    <li class='navigation__button-voting'>
+      <svg width='30' height='30'>
+        <use href='/symbol-defs.d5da0436.svg#icon-Vector-Strokedis'></use>
+      </svg>
+    </li>
+  </ul>
+</section>
+<!-- container-voting -->
+{{#with this}}
+  <section class='container-voting'>
+    <h2 class='visually-hidden'>section with voting</h2>
+    <div class='container-voting__wrap-head'>
+      <button class='button-back'>
+        <svg width='20' height='20'>
+          <use href='/symbol-defs.d5da0436.svg#icon-arrow-left-1'></use>
+        </svg>
+      </button>
+      <div class='container-voting__current'>BREED</div>
+    </div>
+    {{! <div class='container-voting__page'>
+      
+      <div class='container-voting__wrap-btn-add'>
+      </div>
+    </div> }}
+
+    <div class='wrapper'>
+      {{#each this}}
+        <input type='radio' name='image-slide' checked='checked' />
+        <picture aria-label='Random Picture 1'>
+          <img src='{{url}}' alt='Random Picture 1' />
+        </picture>
+      {{/each}}
+    </div>
+
+    <div class='container-voting__item'>
+      <div class='container-voting__item-time'>
+        <span>20:00</span>
+      </div>
+      <p class='container-voting__item-id'>image ID:</p>
+      <svg class='container-voting__item-image' width='20' height='20'>
+        <use href='/symbol-defs.d5da0436.svg#icon-Vector-Strokedis'></use>
+      </svg>
+    </div>
+
+  </section>
+{{/with}}

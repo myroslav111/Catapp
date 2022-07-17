@@ -1,11 +1,19 @@
 import { refs } from './refs';
 import breed from '../templates/breed.hbs';
-import { getBreeds, getDataListBreeds } from './api';
+import singleCat from '../templates/breed-single-cat.hbs';
+import { getBreeds, getDataListBreeds, getBreedByName } from './api';
 import { renderStartingPage } from './render-page-starting';
 import { removeActiveStatus } from './remove-active-status';
 import { selectedElement } from './selected-element';
 import Notiflix from 'notiflix';
+import Swiper, { Navigation, Pagination } from 'swiper';
+// import 'swiper/components/navigation/navigation.min.css';
+// import navigation from 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css';
+// import 'swiper/css/bundle';
 
+let pageSingleCat = 9;
 let page = 1;
 let limit = 5;
 let count = 0;
@@ -21,17 +29,15 @@ async function renderBreedPage(num) {
   // делаем запрос на породы только раз
   if (count === 1) {
     const responsListBreeds = await getDataListBreeds();
-    // listBreeds = responsListBreeds.map(breed => breed.name);
     listBreeds = responsListBreeds.map(breed => {
       let obj = {};
       obj.name = breed.name;
       obj.id = breed.id;
       return obj;
     });
-    console.log(listBreeds);
   }
 
-  // запрос на для галереи
+  // запрос на back для галереи
   const respons = await getBreeds(limit, page);
 
   // если прилетел пустой масив значит лист закончился
@@ -46,8 +52,9 @@ async function renderBreedPage(num) {
 
   // ссылки на опции селекта лимит и сам селект и кнопки назад
   const optionArr = document.querySelectorAll('.option');
-  const select = document.querySelector('#limit');
+  const selectLimit = document.querySelector('#limit');
   const buttonBack = document.querySelector('.button-back');
+  const selectBreed = document.querySelector('#breeds');
 
   // вешаем слушателя на кнопку выйти из breed
   buttonBack.addEventListener('click', () => {
@@ -57,7 +64,9 @@ async function renderBreedPage(num) {
   });
 
   // реагируем на изменения в селекте
-  select.addEventListener('change', getLimitPage);
+  selectLimit.addEventListener('change', getValueFromSelectPage);
+  selectBreed.addEventListener('change', getValueFromSelectPage);
+  // даем активный статус опцыи
   selectedElement(optionArr, currentElement);
 
   // делаем активной кнопку навигации
@@ -65,12 +74,34 @@ async function renderBreedPage(num) {
   paginator();
 }
 // берем значение селекта и рисуем новую пейджу
-async function getLimitPage(e) {
+async function getValueFromSelectPage(e) {
   const currenOption = e.target;
   limit = Number(currenOption.value);
   currentElement = currenOption.value;
-  renderBreedPage();
+  switch (currenOption.name) {
+    case 'breeds-limit':
+      renderBreedPage();
+      break;
+    case 'breeds-name':
+      renderBreedPageByName(currentElement);
+      break;
+    default:
+      break;
+  }
 }
+// получаем дату по имени породы с селекта
+async function renderBreedPageByName(name) {
+  const respons = await getBreedByName(pageSingleCat, name);
+
+  const markup = singleCat(respons);
+  refs.containerRightPage.innerHTML = markup;
+  new Swiper('.swiper', {
+    // pass modules here
+    modules: [Navigation, Pagination],
+    // ...
+  });
+}
+
 // листаем в перед назад страницы
 function paginator() {
   const refBtnNext = document.querySelector('.container-breeds__buttons');
