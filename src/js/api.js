@@ -1,4 +1,3 @@
-import Notiflix from 'notiflix';
 import axios from 'axios';
 
 const KEY = 'a2dddf6f-7336-4a31-ba5a-be34ef9f9736';

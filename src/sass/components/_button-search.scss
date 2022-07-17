@@ -1,7 +1,4 @@
 .button-search {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   width: 40px;
   height: 40px;
   border-radius: 8px;
@@ -10,15 +7,14 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  fill: #ff868e;
   &:hover {
     background-color: #ff868e;
+    fill: #fff;
   }
 }
 
 .button-back {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   font-family: 'Jost';
   font-size: 20px;
   line-height: 30px;
@@ -108,7 +104,7 @@
 }
 
 .button-refresh {
-  width: 40px;
+  width: 45px;
   height: 40px;
   background: #ffffff;
   border-radius: 10px;

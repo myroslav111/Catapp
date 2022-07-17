@@ -13,6 +13,12 @@
     letter-spacing: 2px;
     color: #8c8c8c;
     padding: 10px;
+    fill: #8c8c8c;
+    & button:hover {
+      background: #fbe0dc;
+      fill: #ff868e;
+      color: #ff868e;
+    }
   }
   &__paginator-prev {
     width: 122px;
@@ -20,17 +26,23 @@
     background: #f8f8f7;
     border-radius: 10px;
     margin-right: 40px;
-    &:hover {
-      background: #fbe0dc;
+    & svg {
+      margin-right: 10px;
     }
+    // &:hover {
+    //   background: #fbe0dc;
+    // }
   }
   &__paginator-next {
     width: 122px;
     height: 40px;
     background: #f8f8f7;
     border-radius: 10px;
-    &:hover {
-      background: #fbe0dc;
+    & svg {
+      margin-left: 10px;
     }
+    // &:hover {
+    //   background: #fbe0dc;
+    // }
   }
 }
