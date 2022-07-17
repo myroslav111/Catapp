@@ -322,4 +322,4 @@ var t,e=arguments[3];!function(e,i){"function"==typeof t&&t.amd?t([],function(){
 },{"./refs":"VyiV","./render-page-voting":"VVyr","./render-page-breed":"pcKu","./render-page-gallery":"sFmQ","./render-page-starting":"FEFK"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/togle-page"),require("./js/render-page-breed");var e=require("./js/api");
 },{"./sass/main.scss":"clu1","./js/togle-page":"RFe3","./js/render-page-breed":"pcKu","./js/api":"cZF8"}]},{},["Focm"], null)
-//# sourceMappingURL=/Catapp/src.bc9a82d6.js.map
+//# sourceMappingURL=/Catapp/src.ca4748e4.js.map
