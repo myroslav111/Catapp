@@ -95,10 +95,12 @@ async function renderBreedPageByName(name) {
 
   const markup = singleCat(respons);
   refs.containerRightPage.innerHTML = markup;
-  new Swiper('.swiper', {
-    // pass modules here
-    modules: [Navigation, Pagination],
-    // ...
+
+  const buttonBack = document.querySelector('.button-back');
+  buttonBack.addEventListener('click', () => {
+    renderStartingPage();
+    refs.containerRightPage.classList.add('visually-none');
+    refs.startingPageRigtPart.classList.remove('visually-none');
   });
 }
 
